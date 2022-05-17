@@ -1,0 +1,77 @@
+.cartContainer {
+    position: absolute;
+    overflow: scroll;
+    z-index: 5;
+    right: 7%;
+    width: 325px;
+    height: 50%;
+    background-color: #ffff;
+    padding: 1%;
+}
+
+.myBag {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cartItems {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.checkOutBtn {
+    cursor: pointer;
+    font-family: 'Raleway';
+    width: 140px;
+    height: 43px;
+    background: #5ECE7B;
+    border: 1px solid #5ECE7B;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffff;
+    margin: 3%;
+}
+
+.vievBagBtn {
+    cursor: pointer;
+    font-family: 'Raleway';
+    margin: 3%;
+    width: 140px;
+    height: 43px;
+    background: #ffff;
+    border: 1px solid #1D1F22;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1D1F22;
+}
+
+.cartBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priceSum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1D1F22;
+}
+
+.totalDrop {
+    color: #1D1F22;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}

@@ -1,0 +1,132 @@
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.toCartBtn {
+  cursor: pointer;
+  font-family: 'Raleway';
+  height: 52px;
+  width: 100%;
+  background: #5ECE7B;
+  border: 1px solid #5ECE7B;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffff;
+  margin: 3%;
+}
+
+.productDisplayContainer {
+  margin-top: 6%;
+  margin-left: 6%;
+  margin-right: 6%;
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.productName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.attributeName {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.productPriceSign {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.productPrice {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.discriptionOfProduct {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.colorBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorsBtn {
+  border: none;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+
+.colorsSelectedBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #5ECE7B;
+}
+
+.selectedBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  width: 63px;
+  height: 45px;
+  background-color: #1D1F22;
+  color: #ffff;
+  margin: 4px;
+}
+
+.attributeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #ffff;
+  height: 45px;
+  width: 63px;
+  border: 1px solid #1D1F22;
+}
+
+.attributesContainer {
+  display: flex;
+}
+
+.addToCartContainer {
+  height: 52px;
+  width: 100%;
+}

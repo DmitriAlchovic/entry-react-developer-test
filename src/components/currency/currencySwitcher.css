@@ -1,0 +1,23 @@
+.switcherContainer {
+  z-index: 1;
+  position: absolute;
+  box-shadow: 0px 0px 10px 10px #EEEEEE;
+}
+
+.menuItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #ffff;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  position: relative;
+}
+
+.menuItem:hover {
+  background-color: #EEEEEE;
+}

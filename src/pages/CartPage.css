@@ -1,0 +1,42 @@
+.productCart {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #E5E5E5;
+
+}
+
+.cartPageContainer {
+    font-weight: 700;
+    font-style: bold;
+    font-size: 32px;
+    margin: 6%;
+}
+
+.orderBtn {
+    cursor: pointer;
+    margin: 20px;
+    width: 279px;
+    height: 43px;
+    border: none;
+    background-color: #5ECE7B;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffff;
+}
+
+.total {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.totalCategory {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.totalContainer {
+    display: flex;
+}
