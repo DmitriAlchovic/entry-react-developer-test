@@ -1,16 +1,9 @@
-import React, { Component, ReactEventHandler } from "react";
+import { Component, ReactEventHandler } from "react";
 import { Link } from "react-router-dom";
 import "./categoryList.css";
+import { CategoriesListProps } from "../../interfaces";
 
-interface CategoriesListProps {
-  categories: Category[];
-  changeCategory: Function;
-  category: string;
-}
 
-interface Category {
-  name: string;
-}
 
 export default class CategoriesList extends Component<CategoriesListProps> {
   render() {

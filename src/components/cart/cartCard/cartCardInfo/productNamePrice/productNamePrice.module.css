@@ -1,0 +1,20 @@
+.cartBrandName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size:30px;
+}
+
+.cartProductName {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size:30px;
+}
+
+.cartProductPrice {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}

@@ -1,9 +1,14 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./productDiscription.css";
 import { ProductDiscriptionProps } from "../../interfaces";
-import Gallery from "../gallery";
+import Gallery from "./gallery";
 import { ProductDiscriptionState } from "../../interfaces";
 import { Attrs } from "../../interfaces";
+import ProductAttributes from "../cart/cartCard/cartCardInfo/productAttributes/productAttributes";
+import AddToCartBtn from "./addToCartBtn";
+import BrandPropductName from "./brandProductName";
+import ProductPrice from "./productPrice";
+import Description from "./description";
 
 export default class ProductDiscription extends Component<
   ProductDiscriptionProps,
@@ -72,98 +77,25 @@ export default class ProductDiscription extends Component<
     );
 
     const inCart = cartArray.find((item) => item.id === id);
-    const addToCart = (
-      <button
-        onClick={(e: any) => {
-          addToCartHandler(e.target.value, this.state.attributes, prices);
-        }}
-        value={id}
-        className="toCartBtn"
-      >
-        ADD TO CART
-      </button>
-    );
-    const attributesArr = attributes.map(({ id, name, items }, index) => {
-      const attributeName = name;
-      const toCompare: any = this.state.attributes;
-      if (id === "Color" && this.state.attributes[index]) {
-        const itemsArr = items.map(({ displayValue, value, id }) => {
-          return (
-            <div
-              className={
-                displayValue === toCompare[index].displayValue
-                  ? "colorsSelectedBtn"
-                  : "colorsBtnContainer"
-              }
-            >
-              <button
-                className="colorsBtn"
-                name={attributeName}
-                onClick={(e) => {
-                  this.setAttributeHandler(e);
-                }}
-                value={displayValue}
-                style={{ backgroundColor: `${value}` }}
-                key={id}
-              ></button>
-            </div>
-          );
-        });
-        return (
-          <div key={id}>
-            <p className="attributeName">{name.toUpperCase()}:</p>
-            <div className="attributesContainer">{itemsArr}</div>
-          </div>
-        );
-      }
-      if (this.state.attributes[index]) {
-        const itemsArr = items.map(({ displayValue, value, id }) => {
-          return (
-            <button
-              name={attributeName}
-              value={displayValue}
-              onClick={(e) => {
-                this.setAttributeHandler(e);
-              }}
-              className={
-                displayValue === toCompare[index].displayValue
-                  ? "selectedBtn"
-                  : "attributeBtn"
-              }
-              key={id}
-            >
-              {value}
-            </button>
-          );
-        });
-        return (
-          <div key={id}>
-            <p className="attributeName">{name.toLocaleUpperCase()}:</p>
-            <div className="attributesContainer">{itemsArr}</div>
-          </div>
-        );
-      }
-    });
+    const activeAttributes = this.state.attributes.length;
 
     return (
       <div className="productDisplayContainer">
         <Gallery gallery={gallery}></Gallery>
         <div className="info">
-          <p className="brandName">{brand}</p>
-          <p className="productName">{name}</p>
-          {attributesArr}
-          <p className="productPriceSign">PRICE:</p>
-          <p className="productPrice">
-            {currentCurrency}
-            {price[0].amount}
-          </p>
+         <BrandPropductName productName={name} brand={brand} /> 
+          {activeAttributes? <ProductAttributes
+        attributes={attributes}
+        activeAttributes={this.state.attributes}
+        dropdown={false}
+        setAttributeInCartHandler={this.setAttributeHandler}
+        productId={id}
+      />:null}
+          <ProductPrice price={price[0].amount} currentCurrency={currentCurrency} /> 
           <div className="addToCartContainer">
-            {!inCart && inStock && addToCart}
+            {!inCart && inStock && <AddToCartBtn addToCartHandler={addToCartHandler} prices={prices} productId={id} attributes={this.state.attributes}  />}
           </div>
-          <div
-            className="discriptionOfProduct"
-            dangerouslySetInnerHTML={{ __html: description }}
-          ></div>
+         <Description description={description} /> 
         </div>
       </div>
     );

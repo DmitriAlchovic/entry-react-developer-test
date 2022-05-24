@@ -1,0 +1,13 @@
+.toCartBtn {
+  cursor: pointer;
+  font-family: 'Raleway';
+  height: 52px;
+  width: 100%;
+  background: #5ECE7B;
+  border: 1px solid #5ECE7B;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffff;
+  margin: 3%;
+}

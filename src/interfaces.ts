@@ -8,7 +8,6 @@ export interface SliderProps{
   gallery:string[];
 }
 export interface CartPageProps{
-  productQuantity:number;
   setAttributeInCartHandler:Function;
   changeProductQuantity:Function;
   currentCurrency:string;
@@ -42,6 +41,14 @@ export interface DropdownProps {
   icon2?:string;
   icon3?:string|number;
 }
+
+export interface DropDownDisplayProps{
+    icon?:string;
+    open:boolean;
+    toggleOpen:Function;
+    children:React.ReactNode;
+}
+
 export interface GalleryProps {
     gallery:string[];
 }
@@ -97,10 +104,6 @@ export interface Items{
   value:string;
 }
 
-export interface NavProps extends React.PropsWithChildren<any> {
-  children:any;
-}
-
 export interface CurrencySwitcherProps {
   currencies: Currency[];
   changeCurrency:Function;
@@ -121,6 +124,7 @@ export interface CategoryCardProps {
 
 export interface Category {
   products: Product[];
+  name:string;
 }
 
 export interface Price {
@@ -154,4 +158,126 @@ export interface Attrs{
 
 export interface ProductDiscriptionState{
   attributes:Attrs[]|any;
+}
+
+export interface RouterComponentProps{
+  cartArray:Cart[];
+  addToCartHandler:Function;
+  category:string;
+  currentCurrency:string;
+  changeProductQuantity:Function;
+  setAttributeInCartHandler:Function;
+}
+
+export interface  NavProps {
+  category:string;
+  currentCurrency:string;
+  changeCurrency:Function;
+  changeProductQuantity:Function;
+  setAttributeInCartHandler:Function;
+  changeCategory:Function;
+  cartArray:Cart[];
+}
+
+export interface CurrencyListQueryProps {
+    currentCurrency:string;
+    changeCurrency:Function;
+}
+
+export interface CartQueryProps {
+    id:string;
+    dropdown:boolean;
+    changeProductQuantity:Function;
+    cart:Cart[];
+    setAttributeInCartHandler:Function;
+    currentCurrency:string;
+}
+
+export interface CartFooterProps {
+  currentCurrency: string;
+  totalSum: number;
+}
+
+export interface CartHeaderProps {
+  productQuantity: number;
+}
+
+export interface CardInfoProps{
+    brand:string;
+    name:string;
+    currentCurrency:string;
+    price:number;
+    productId:string;
+    attributes:Attribute[];
+    cart:Cart[];
+    cartIdx:number;
+    setAttributeInCartHandler:Function;
+    dropdown:boolean;
+}
+
+export interface ProductAttributesProps{
+    attributes:Attribute[];
+    activeAttributes:CartAttribute[];
+    setAttributeInCartHandler:Function;
+    dropdown:boolean;
+    productId:string;
+}
+
+export interface AttributesItemProps{
+    items:Items[];
+    setAttributeInCartHandler:Function;
+    attrIdx:number;
+    activeAttributes:CartAttribute[];
+    name:string;
+    productId:string;
+    dropdown:boolean;
+}
+
+export interface ProductNamePriceProps {
+  brand:string;
+  name:string;
+  currentCurrency:string;
+  price:number;
+  dropdown:boolean;
+}
+
+export interface CategoryCardQueryProps{
+    category:string;
+    addToCartHandler:Function;
+    cartArray:Cart[];
+    currentCurrency:string;
+}
+
+export interface ProductDiscriptionQueryProps {
+    productId:string;
+    cartArray:Cart[];
+    addToCartHandler:Function;
+    currentCurrency:string;
+}
+
+export interface AddToCartBtnProps{
+    addToCartHandler:Function;
+    attributes:CartAttribute[];
+    prices:Price[];
+    productId:string;
+}
+
+export interface CategoriesListProps {
+  categories: Category[];
+  changeCategory: Function;
+  category: string;
+}
+
+export interface ProductPriceProps {
+    currentCurrency:string;
+    price:number;
+}
+
+export interface DescriptionProps {
+  description: string;
+}
+
+export interface BrandPropductNameProps {
+  brand: string;
+  productName: string;
 }

@@ -1,0 +1,29 @@
+.colorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorBtnContainer {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.colorsBtn {
+  height: 16px;
+  width: 16px;
+  border: none;
+}
+
+.colorsSelectedBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #5ECE7B;
+  padding: 1px;
+  margin: 4px;
+  width: auto;
+  min-height: 16px;
+}

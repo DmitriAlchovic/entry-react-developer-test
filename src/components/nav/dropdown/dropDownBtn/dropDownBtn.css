@@ -1,0 +1,29 @@
+.dropbtn {
+  position: relative;
+  color: #1D1F22;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  background-color: #ffff;
+}
+
+.dropbtn:hover {
+  background-color: #EEEEEE;
+}
+
+.inCart {
+  color: #ffff;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  border: 3px solid #000;
+  text-align: center;
+}

@@ -4,6 +4,18 @@
 }
 
 .logo{
-    margin-top: 30px;
-    margin-bottom: 20px;
+    flex:0 0 10px
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #8D8F9A;
 }

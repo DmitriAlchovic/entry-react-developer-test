@@ -7,8 +7,11 @@
 .cartPageContainer {
     font-weight: 700;
     font-style: bold;
-    font-size: 32px;
-    margin: 6%;
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size:30px;
+    min-height: 702px;
 }
 
 .orderBtn {
@@ -25,18 +28,11 @@
     color: #ffff;
 }
 
-.total {
+
+
+.cartPageName{
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-}
-
-.totalCategory {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.totalContainer {
-    display: flex;
+    font-size: 32px;
 }

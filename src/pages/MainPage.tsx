@@ -1,37 +1,23 @@
-import React, { Component } from "react";
-import { GET_PRODUCT_INFO } from "../query/productInfo";
-import CategoryCard from "../components/categoryCard/categoryCard";
+import { Component } from "react";
 import { MainPageProps } from "../interfaces";
-import { Query } from "@apollo/client/react/components";
 import "./MainPage.css";
+import CategoryCardQuery from "../components/categoryCard/categoryCardQuery";
 
 export default class MainPage extends Component<MainPageProps> {
   render() {
-    const { category, currentCurrency, cartArray, addToCartHandler } = this.props;
-
+    const { category, currentCurrency, cartArray, addToCartHandler } =
+      this.props;
     return (
       <div>
-        <p className="categoryName">{category.charAt(0).toUpperCase() + category.slice(1)}</p>
-        <Query query={GET_PRODUCT_INFO} variables={{ category }}>
-          {(queryResult: any) => {
-            const { data, loading, error } = queryResult;
-            if (loading) {
-              return <div>...Loading</div>;
-            }
-            if (data) {
-              const { category } = data;
-              return (
-                <CategoryCard
-                  addToCartHandler={addToCartHandler}
-                  cartArray={cartArray}
-                  category={category}
-                  currentCurrency={currentCurrency}
-                ></CategoryCard>
-              );
-            }
-            return null;
-          }}
-        </Query>
+        <p className="categoryName">
+          {category.charAt(0).toUpperCase() + category.slice(1)}
+        </p>
+        <CategoryCardQuery
+          category={category}
+          currentCurrency={currentCurrency}
+          cartArray={cartArray}
+          addToCartHandler={addToCartHandler}
+        />
       </div>
     );
   }

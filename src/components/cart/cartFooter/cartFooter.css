@@ -1,0 +1,44 @@
+.priceSum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1D1F22;
+}
+
+.totalDrop {
+    color: #1D1F22;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cartBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vievBagRef{
+    width:100%
+}
+
+.checkOutBtn {
+    cursor: pointer;
+    font-family: 'Raleway';
+    min-height: 43px;
+    width: 100%;
+    background: #5ECE7B;
+    border: 1px solid #5ECE7B;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffff;
+    margin: 3%;
+}

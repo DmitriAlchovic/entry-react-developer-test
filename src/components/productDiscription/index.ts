@@ -1,3 +1,3 @@
-import ProductDiscription from "./productDiscription";
+import ProductDiscriptionQuery from "./productDiscriptionQuery";
 
-export default ProductDiscription;
+export default ProductDiscriptionQuery;

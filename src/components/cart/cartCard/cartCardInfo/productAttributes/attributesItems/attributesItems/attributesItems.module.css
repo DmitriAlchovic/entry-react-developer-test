@@ -1,0 +1,35 @@
+.selectedBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  width: 63px;
+  height: 45px;
+  border: none;
+  background-color: #1D1F22;
+  color: #ffff;
+  margin: 4px;
+}
+
+.attributeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  width: 63px;
+  height: 45px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #ffff;
+  border: 1px solid #1D1F22;
+}
+
+.attributesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

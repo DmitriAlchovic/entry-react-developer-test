@@ -1,0 +1,16 @@
+.circleCart {
+    position: absolute;
+    bottom: 100px;
+    right: 60px;
+    border-radius: 50%;
+    border: none;
+    height: 52px;
+    width: 52px;
+    background-color: #5ECE7B;
+    cursor: pointer;
+    display: none;
+}
+
+.cartIcon {
+    pointer-events: none;
+}

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./categoryCard.css";
-import { Link } from "react-router-dom";
 import { CategoryCardProps } from "../../interfaces";
-import EmptyCart from "../../assets/Empty Cart2.svg";
+import AddToCartBtn from "./addToCartBtn/addToCartBtn";
+import CategoryCardInfo from "./categoryCardInfo/categoryCardInfo";
 
 export default class CategoryCard extends Component<CategoryCardProps> {
   state = {
@@ -30,8 +30,6 @@ export default class CategoryCard extends Component<CategoryCardProps> {
       (item: any) => item.id === e.target.value
     );
     const candidate: any = this.state.cartCandidates[idx];
-    console.log(candidate, "CAN");
-
     this.props.addToCartHandler(
       candidate.id,
       candidate.attributes,
@@ -43,7 +41,7 @@ export default class CategoryCard extends Component<CategoryCardProps> {
     const { category, currentCurrency, cartArray } = this.props;
     const { products } = category;
     const cardsArray = products.map(
-      ({ gallery, inStock, name, id, prices, attributes }, index) => {
+      ({ gallery, inStock, name, id, prices }, index) => {
         const inCart = cartArray.find((item) => item.id === id);
         const price = prices.filter(
           ({ currency }) => currency.symbol === currentCurrency
@@ -51,36 +49,16 @@ export default class CategoryCard extends Component<CategoryCardProps> {
 
         return (
           <div key={index} className="cardContainer">
-            <Link className="link" to={`/product/${id}`}>
-              <div className="card" key={id}>
-                <div className="con">
-                  {!inStock && <p className="stock">OUT OF STOCK</p>}
-                  <div className="imgSvg">
-                    <img
-                      className={inStock ? "productImg" : "productImgOut"}
-                      src={gallery[0]}
-                    />
-                  </div>
-                </div>
-                <p className="productNameCategory">{name}</p>
-                <p className="productPriceCategory">
-                  <strong>
-                    {currentCurrency}
-                    {price[0].amount}
-                  </strong>
-                </p>
-              </div>
-            </Link>
+            <CategoryCardInfo
+              productId={id}
+              inStock={inStock}
+              img={gallery[0]}
+              productName={name}
+              currentCurrency={currentCurrency}
+              productPrice={price[0].amount}
+            />
             {inStock && !inCart && (
-              <button
-                value={id}
-                onClick={(e) => {
-                  this.addToCart(e);
-                }}
-                className="circleCart"
-              >
-                <img className="cartIcon" src={EmptyCart} />
-              </button>
+              <AddToCartBtn productId={id} addToCart={this.addToCart} />
             )}
           </div>
         );

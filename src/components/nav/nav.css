@@ -2,12 +2,6 @@
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 80px;
-    overflow:scroll;
+    min-height: 80px;
+    z-index: 50;
   }
-  
-  
-  

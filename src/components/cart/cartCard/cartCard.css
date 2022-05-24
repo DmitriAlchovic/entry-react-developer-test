@@ -1,0 +1,17 @@
+.cartCard {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
+
+.sliderContainer {
+  position: relative;
+  min-height: 190px;
+  max-width: 200px;
+  margin: 6%;
+}
+
+.cartRight {
+  display: flex;
+  margin: 2%;
+}

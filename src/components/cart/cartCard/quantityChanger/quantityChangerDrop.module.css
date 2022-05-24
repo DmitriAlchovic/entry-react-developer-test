@@ -1,0 +1,23 @@
+.quantityChanger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.changeQuantityBtn {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #1D1F22;
+  background-color: #ffff;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.productQuantity {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
