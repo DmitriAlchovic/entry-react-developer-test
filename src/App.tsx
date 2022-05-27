@@ -7,41 +7,24 @@ import "./App.css";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache(),  defaultOptions: {
+    watchQuery: {
+      nextFetchPolicy: 'no-cache',
+    },}
+
 });
 
 export default class App extends Component {
   state = {
     currentCurrency: "$",
     category: "all",
-    cartArray: [
-      {
-        id: "ps-5",
-        attributes: [
-          { id: "Color", displayValue: "Green" },
-          { id: "Capacity", displayValue: "1T" },
-        ],
-        productQuantity: 1,
-        prices: [
-          {
-            __typename: "Price",
-            amount: 844.02,
-            currency: { __typename: "Currency", label: "USD", symbol: "$" },
-          },
-          {
-            __typename: "Price",
-            amount: 63826.91,
-            currency: { __typename: "Currency", symbol: "₽", label: "RUB" },
-          },
-        ],
-      },
-    ],
+    cartArray: [],
   };
 
-  changeProductQuantity = (id: string, productQuantity: number) => {
+  changeProductQuantity = (productId: string, productQuantity: number) => {
     this.setState((state: AppState) => {
       if (productQuantity === 0) {
-        const idx = state.cartArray.findIndex((cart) => cart.id === id);
+        const idx = state.cartArray.findIndex((cart) => cart.id === productId);
         const cartArray = [
           ...state.cartArray.slice(0, idx),
           ...state.cartArray.slice(idx + 1),
@@ -50,7 +33,7 @@ export default class App extends Component {
       }
       const cartArray = this.toggleProperty(
         state.cartArray,
-        id,
+        productId,
         "productQuantity",
         productQuantity
       );
@@ -74,7 +57,7 @@ export default class App extends Component {
     });
   };
 
-  setAttributeInCartHandler = (event: any, productId: string) => {
+  setAttributeInCartHandler = (event: React.ChangeEvent<HTMLButtonElement>, productId: string) => {
     this.setState((state: AppState) => {
       const idx = state.cartArray.findIndex((cart) => cart.id === productId);
       const attributes = this.toggleProperty(
@@ -108,11 +91,6 @@ export default class App extends Component {
   };
 
   render() {
-    const productQuantity = this.state.cartArray.reduce(
-      (prev, item) => prev + item.productQuantity,
-      0
-    );
-
     return (
       <div className="App">
         <ApolloProvider client={client}>

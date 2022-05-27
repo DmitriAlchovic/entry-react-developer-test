@@ -1,11 +1,11 @@
 import { Component } from "react";
-import { CartProps } from "../../interfaces";
-import "./cart.css";
-import CartQuery from "./cartQuery";
-import CartFooter from "./cartFooter/cartFooter";
-import CartHeader from "./cartHeader/cartHeader";
+import { CartProps } from "../../../interfaces";
+import "./minicart.css";
+import MinicartQuery from "../../cartCard/cartQuery";
+import MinicartFooter from "./minicartFooter/cartFooter";
+import MinicartHeader from "./minicartHeader/minicartHeader";
 
-export default class Cart extends Component<CartProps> {
+export default class Minicart extends Component<CartProps> {
   render() {
     const {
       cart,
@@ -25,10 +25,10 @@ export default class Cart extends Component<CartProps> {
     const taxSum = Math.ceil(productsSum * 0.21 * 100) / 100;
     const totalSum = Math.round((productsSum + taxSum) * 100) / 100;
     const cartArr = cart.map(({ id }, index) => (
-      <CartQuery
+      <MinicartQuery
         key={index}
         id={id}
-        dropdown={true}
+        isDropdown={true}
         changeProductQuantity={changeProductQuantity}
         cart={cart}
         setAttributeInCartHandler={setAttributeInCartHandler}
@@ -43,9 +43,9 @@ export default class Cart extends Component<CartProps> {
           e.stopPropagation();
         }}
       >
-        <CartHeader productQuantity={productQuantity} />
+        <MinicartHeader productQuantity={productQuantity} />
         {cartArr}
-        <CartFooter totalSum={totalSum} currentCurrency={currentCurrency} />
+        <MinicartFooter totalSum={totalSum} currentCurrency={currentCurrency} />
       </div>
     );
   }

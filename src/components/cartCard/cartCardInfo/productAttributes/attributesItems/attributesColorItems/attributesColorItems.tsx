@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { AttributesItemProps } from "../../../../../../../interfaces";
+import { AttributesItemProps } from "../../../../../../interfaces";
 import dropStyle from "./attributesColorItemsDrop.module.css";
 import defaultStyle from "./attributesColorItems.module.css";
 
@@ -11,10 +11,10 @@ export default class AttributesColorItem extends Component<AttributesItemProps> 
       attrIdx,
       name,
       productId,
-      dropdown,
+      isDropdown,
       activeAttributes
     } = this.props;
-    const styles = dropdown ? dropStyle : defaultStyle;
+    const styles = isDropdown ? dropStyle : defaultStyle;
 
     const itemsArr = items.map(({ displayValue, value, id }) => {
       return (

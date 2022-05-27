@@ -1,7 +1,7 @@
 import  { Component } from "react";
 import { CartPageProps } from "../interfaces";
 import "./CartPage.css";
-import CartQuery from "../components/cart/cartQuery";
+import CartQuery from "../components/cartCard/cartQuery";
 import CartPageFooter from "../components/cartPageFooter";
 
 export default class CartPage extends Component<CartPageProps> {
@@ -31,7 +31,7 @@ export default class CartPage extends Component<CartPageProps> {
       <CartQuery
         key={index}
         id={id}
-        dropdown={false}
+        isDropdown={false}
         changeProductQuantity={changeProductQuantity}
         cart={cart}
         setAttributeInCartHandler={setAttributeInCartHandler}

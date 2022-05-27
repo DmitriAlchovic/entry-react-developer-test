@@ -4,7 +4,7 @@ import { ProductDiscriptionProps } from "../../interfaces";
 import Gallery from "./gallery";
 import { ProductDiscriptionState } from "../../interfaces";
 import { Attrs } from "../../interfaces";
-import ProductAttributes from "../cart/cartCard/cartCardInfo/productAttributes/productAttributes";
+import ProductAttributes from "../cartCard/cartCardInfo/productAttributes/productAttributes";
 import AddToCartBtn from "./addToCartBtn";
 import BrandPropductName from "./brandProductName";
 import ProductPrice from "./productPrice";
@@ -87,7 +87,7 @@ export default class ProductDiscription extends Component<
           {activeAttributes? <ProductAttributes
         attributes={attributes}
         activeAttributes={this.state.attributes}
-        dropdown={false}
+        isDropdown={false}
         setAttributeInCartHandler={this.setAttributeHandler}
         productId={id}
       />:null}

@@ -23,7 +23,7 @@ export interface CartCardProps{
   product: Product;
   currentCurrency:string;
   cart:Cart[];
-  dropdown:boolean;
+  isDropdown:boolean;
 }
 export interface CartCardState{
   productQuantity:number;
@@ -186,7 +186,7 @@ export interface CurrencyListQueryProps {
 
 export interface CartQueryProps {
     id:string;
-    dropdown:boolean;
+    isDropdown:boolean;
     changeProductQuantity:Function;
     cart:Cart[];
     setAttributeInCartHandler:Function;
@@ -212,14 +212,14 @@ export interface CardInfoProps{
     cart:Cart[];
     cartIdx:number;
     setAttributeInCartHandler:Function;
-    dropdown:boolean;
+    isDropdown:boolean;
 }
 
 export interface ProductAttributesProps{
     attributes:Attribute[];
     activeAttributes:CartAttribute[];
     setAttributeInCartHandler:Function;
-    dropdown:boolean;
+    isDropdown:boolean;
     productId:string;
 }
 
@@ -230,7 +230,7 @@ export interface AttributesItemProps{
     activeAttributes:CartAttribute[];
     name:string;
     productId:string;
-    dropdown:boolean;
+    isDropdown:boolean;
 }
 
 export interface ProductNamePriceProps {
@@ -238,7 +238,7 @@ export interface ProductNamePriceProps {
   name:string;
   currentCurrency:string;
   price:number;
-  dropdown:boolean;
+  isDropdown:boolean;
 }
 
 export interface CategoryCardQueryProps{

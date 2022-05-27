@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { ProductAttributesProps } from "../../../../../interfaces";
+import { ProductAttributesProps } from "../../../../interfaces";
 import AttributesColorItem from "./attributesItems/attributesColorItems/attributesColorItems";
 import AttributesItems from "./attributesItems/attributesItems/attributesItems";
 import dropStyle from "./productAttributesDrop.module.css";
@@ -12,9 +12,9 @@ export default class ProductAttributes extends Component<ProductAttributesProps>
       setAttributeInCartHandler,
       productId,
       activeAttributes,
-      dropdown,
+      isDropdown,
     } = this.props;
-    const styles = dropdown?dropStyle:defaultStyle;
+    const styles = isDropdown?dropStyle:defaultStyle;
     
     const attributesArr = attributes.map(({ id, name, items }) => {
       const attrIdx = activeAttributes.findIndex(
@@ -25,7 +25,7 @@ export default class ProductAttributes extends Component<ProductAttributesProps>
           <div className={styles.attributeName} key={id}>
             <p>{name.toUpperCase()}:</p>
             <AttributesColorItem
-              dropdown={dropdown}
+              isDropdown={isDropdown}
               setAttributeInCartHandler={setAttributeInCartHandler}
               items={items}
               activeAttributes={activeAttributes}
@@ -40,7 +40,7 @@ export default class ProductAttributes extends Component<ProductAttributesProps>
         <div key={id}>
           <p className={styles.attributeName}>{name.toUpperCase()}:</p>
           <AttributesItems
-            dropdown={dropdown}
+            isDropdown={isDropdown}
             setAttributeInCartHandler={setAttributeInCartHandler}
             items={items}
             activeAttributes={activeAttributes}

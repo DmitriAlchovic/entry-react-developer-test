@@ -28,7 +28,7 @@ export default class CategoryCardQuery extends Component<CategoryCardQueryProps>
               );
             }
             if(error){
-                return (<div>{error}</div>)
+                return (<div>Error</div>)
             }
             return null;
           }}

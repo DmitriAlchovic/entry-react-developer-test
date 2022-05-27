@@ -1,9 +1,9 @@
 import { Component } from "react";
-import { CartHeaderProps } from "../../../interfaces";
-import "./cartHeader.css";
+import { CartHeaderProps } from "../../../../interfaces";
+import "./minicartHeader.css";
 
 
-export default class CartHeader extends Component<CartHeaderProps> {
+export default class MinicartHeader extends Component<CartHeaderProps> {
   render() {
     const { productQuantity } = this.props;
     return (

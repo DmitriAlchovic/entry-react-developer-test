@@ -4,7 +4,7 @@
     z-index: 5;
     right: 7%;
     width: auto;
-    max-width: 325px;
+    min-width: 325px;
     min-height: auto;
     max-height: 60%;
     background-color: #ffff;

@@ -1,8 +1,8 @@
 import  { Component } from "react";
-import { SliderProps, SliderState } from "../../../../interfaces";
+import { SliderProps, SliderState } from "../../../interfaces";
 import "./slider.css";
-import vectorLeft from "../../../../assets/Vector-left.svg"; 
-import vectorRight from "../../../../assets/Vector-right.svg";
+import vectorLeft from "../../../assets/Vector-left.svg"; 
+import vectorRight from "../../../assets/Vector-right.svg";
 
 export default class Slider extends Component<SliderProps, SliderState> {
   state = {

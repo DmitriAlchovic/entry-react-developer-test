@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { CartCardProps } from "../../../interfaces";
+import { CartCardProps } from "../../interfaces";
 import Slider from "./slider";
 import "./cartCard.css";
 import CartCardInfo from "./cartCardInfo";
@@ -8,7 +8,7 @@ import QuantityChanger from "./quantityChanger";
 export default class CartCard extends Component<CartCardProps> {
   render() {
     const {
-      dropdown,
+      isDropdown,
       product,
       currentCurrency,
       setAttributeInCartHandler,
@@ -20,8 +20,8 @@ export default class CartCard extends Component<CartCardProps> {
     const price = prices.filter(
       ({ currency }) => currency.symbol === currentCurrency
     );
-    const idx = cart.findIndex((item: any) => item.id === id);
-    const productQuantity = cart[idx].productQuantity;
+    const cartIdx = cart.findIndex((item: any) => item.id === id);
+    const productQuantity = cart[cartIdx].productQuantity;
 
     return (
       <div className={"cartCard"}>
@@ -33,13 +33,13 @@ export default class CartCard extends Component<CartCardProps> {
           attributes={attributes}
           productId={id}
           cart={cart}
-          cartIdx={idx}
+          cartIdx={cartIdx}
           setAttributeInCartHandler={setAttributeInCartHandler}
-          dropdown={dropdown}
+          isDropdown={isDropdown}
         />
         <div className={"cartRight"}>
           <QuantityChanger
-            dropdown={dropdown}
+            isDropdown={isDropdown}
             changeProductQuantity={changeProductQuantity}
             id={product.id}
             productQuantity={productQuantity}

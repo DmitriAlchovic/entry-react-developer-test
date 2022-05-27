@@ -1,11 +1,11 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import { CartFooterProps } from "../../../interfaces";
-import "./cartFooter.css"
+import { CartFooterProps } from "../../../../interfaces";
+import "./minicartFooter.css"
 
 
 
-export default class CartFooter extends Component<CartFooterProps> {
+export default class MinicartFooter extends Component<CartFooterProps> {
   render() {
     const { currentCurrency, totalSum } = this.props;
     return (

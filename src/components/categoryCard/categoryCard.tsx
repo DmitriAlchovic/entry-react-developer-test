@@ -21,7 +21,7 @@ export default class CategoryCard extends Component<CategoryCardProps> {
 
       return { id, prices, attributes };
     });
-
+    
     this.setState({ cartCandidates: cartCandidates });
   }
 

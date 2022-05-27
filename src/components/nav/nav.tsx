@@ -2,13 +2,13 @@ import { Component } from "react";
 import "./nav.css";
 import { NavProps } from "../../interfaces";
 import CategoriesListQuery from "../categoriesList/";
-import CurrencyList from "./currency";
+import CurrencySwitcher from "./currencySwitcher";
 import Dropdown from "./dropdown";
-import Cart from "../cart";
 import VectorDown from "../../assets/Vector-down.svg";
 import VectorUp from "../../assets/Vector-up.svg";
 import EmptyCart from "../../assets/Empty Cart.svg";
 import Logo from "./logo/logo";
+import Minicart from "./minicart";
 
 export default class Nav extends Component<NavProps> {
   render() {
@@ -34,13 +34,13 @@ export default class Nav extends Component<NavProps> {
         <Logo />
         <div className="dropsContainer">
           <Dropdown icon={VectorDown} icon2={VectorUp} icon3={currentCurrency}>
-            <CurrencyList
+            <CurrencySwitcher
               currentCurrency={currentCurrency}
               changeCurrency={changeCurrency}
             />
           </Dropdown>
           <Dropdown icon={EmptyCart} icon3={productQuantity}>
-            <Cart
+            <Minicart
               productQuantity={productQuantity}
               changeProductQuantity={changeProductQuantity}
               setAttributeInCartHandler={setAttributeInCartHandler}

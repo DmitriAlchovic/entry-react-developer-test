@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ProductNamePrice from "./productNamePrice/ProductNamePriceInfo";
-import { CardInfoProps } from "../../../../interfaces";
+import { CardInfoProps } from "../../../interfaces";
 import ProductAttributes from "./productAttributes/productAttributes";
 import "./cartCardInfo.css";
 
@@ -16,7 +16,7 @@ export default class CartCardInfo extends Component<CardInfoProps> {
       cartIdx,
       setAttributeInCartHandler,
       productId,
-      dropdown
+      isDropdown
     } = this.props;
 
     const activeAttributes = cart[cartIdx].attributes;
@@ -27,11 +27,11 @@ export default class CartCardInfo extends Component<CardInfoProps> {
           name={name}
           currentCurrency={currentCurrency}
           price={price}
-          dropdown={dropdown}
+          isDropdown={isDropdown}
         />
         <ProductAttributes
           activeAttributes={activeAttributes}
-          dropdown={dropdown}
+          isDropdown={isDropdown}
           attributes={attributes}
           setAttributeInCartHandler={setAttributeInCartHandler}
           productId={productId}

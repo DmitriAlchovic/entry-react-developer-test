@@ -6,13 +6,13 @@ export interface QuantityChangerProps {
     changeProductQuantity:Function;
     id:string;
     productQuantity:number;
-    dropdown:boolean;
+    isDropdown:boolean;
 }
 
 export default class QuantityChanger extends Component<QuantityChangerProps>{
     render(){
-        const {changeProductQuantity, id, productQuantity, dropdown} = this.props;
-        const styles = dropdown?dropStyle:defaultStyle;
+        const {changeProductQuantity, id, productQuantity, isDropdown} = this.props;
+        const styles = isDropdown?dropStyle:defaultStyle;
         return(<div className={styles.quantityChanger}>
             <button
               className={styles.changeQuantityBtn}

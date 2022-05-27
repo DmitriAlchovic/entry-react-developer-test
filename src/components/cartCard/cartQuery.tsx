@@ -1,13 +1,13 @@
 import {Component} from "react";
 import { Query } from "@apollo/client/react/components";
 import { GET_PRODUCT } from "../../query/product";
-import CartCard from "./cartCard";
+import CartCard from ".";
 import { CartQueryProps } from "../../interfaces";
 
 
 export default class CartQuery extends Component<CartQueryProps> {
     render(){
-        const {id, cart, dropdown, changeProductQuantity, setAttributeInCartHandler, currentCurrency}= this.props;
+        const {id, cart, isDropdown, changeProductQuantity, setAttributeInCartHandler, currentCurrency}= this.props;
         return(
           <Query query={GET_PRODUCT} variables={{ id }}>
             {(queryResult: any) => {
@@ -19,13 +19,13 @@ export default class CartQuery extends Component<CartQueryProps> {
                 const { product } = data;
                 return (
                   <CartCard
-                    dropdown={dropdown}
+                    isDropdown={isDropdown}
                     changeProductQuantity={changeProductQuantity}
                     cart={cart}
                     setAttributeInCartHandler={setAttributeInCartHandler}
                     product={product}
                     currentCurrency={currentCurrency}
-                  ></CartCard>
+                  />
                 );
               }
               if(error){
