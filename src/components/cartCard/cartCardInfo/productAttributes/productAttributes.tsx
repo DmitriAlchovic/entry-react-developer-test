@@ -1,9 +1,9 @@
-import { Component } from "react";
-import { ProductAttributesProps } from "../../../../interfaces";
-import AttributesColorItem from "./attributesItems/attributesColorItems/attributesColorItems";
-import AttributesItems from "./attributesItems/attributesItems/attributesItems";
-import dropStyle from "./productAttributesDrop.module.css";
-import defaultStyle from "./productAttributes.module.css";
+import React, { Component } from 'react';
+import { ProductAttributesProps } from '../../../../interfaces';
+import AttributesColorItem from './attributesItems/attributesColorItems/attributesColorItems';
+import AttributesItems from './attributesItems/attributesItems/attributesItems';
+import dropStyle from './productAttributesDrop.module.css';
+import defaultStyle from './productAttributes.module.css';
 
 export default class ProductAttributes extends Component<ProductAttributesProps> {
   render() {
@@ -14,13 +14,11 @@ export default class ProductAttributes extends Component<ProductAttributesProps>
       activeAttributes,
       isDropdown,
     } = this.props;
-    const styles = isDropdown?dropStyle:defaultStyle;
-    
+    const styles = isDropdown ? dropStyle : defaultStyle;
+
     const attributesArr = attributes.map(({ id, name, items }) => {
-      const attrIdx = activeAttributes.findIndex(
-        (item: any) => item.id === id
-      );
-      if (id === "Color") {
+      const attrIdx = activeAttributes.findIndex((item: any) => item.id === id);
+      if (id === 'Color') {
         return (
           <div className={styles.attributeName} key={id}>
             <p>{name.toUpperCase()}:</p>

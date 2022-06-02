@@ -1,3 +1,3 @@
-import AddToCartBtn from "./addToCartBtn";
+import AddToCartBtn from './addToCartBtn';
 
 export default AddToCartBtn;

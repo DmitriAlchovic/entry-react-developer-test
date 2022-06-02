@@ -1,3 +1,3 @@
-import ProductAttributes from "./productAttributes";
+import ProductAttributes from './productAttributes';
 
 export default ProductAttributes;

@@ -1,3 +1,3 @@
-import categoryCard from "./categoryCard";
+import categoryCard from './categoryCard';
 
 export default categoryCard;

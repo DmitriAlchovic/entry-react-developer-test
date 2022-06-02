@@ -1,8 +1,8 @@
-import { Component } from "react";
-import ProductNamePrice from "./productNamePrice/ProductNamePriceInfo";
-import { CardInfoProps } from "../../../interfaces";
-import ProductAttributes from "./productAttributes/productAttributes";
-import "./cartCardInfo.css";
+import React, { Component } from 'react';
+import ProductNamePrice from './productNamePrice/ProductNamePriceInfo';
+import { CardInfoProps } from '../../../interfaces';
+import ProductAttributes from './productAttributes/productAttributes';
+import './cartCardInfo.css';
 
 export default class CartCardInfo extends Component<CardInfoProps> {
   render() {
@@ -15,13 +15,13 @@ export default class CartCardInfo extends Component<CardInfoProps> {
       cart,
       cartIdx,
       setAttributeInCartHandler,
-      productId,
-      isDropdown
+      inCartId,
+      isDropdown,
     } = this.props;
 
     const activeAttributes = cart[cartIdx].attributes;
     return (
-      <div className={"infoContainer"}>
+      <div className={'infoContainer'}>
         <ProductNamePrice
           brand={brand}
           name={name}
@@ -34,7 +34,7 @@ export default class CartCardInfo extends Component<CardInfoProps> {
           isDropdown={isDropdown}
           attributes={attributes}
           setAttributeInCartHandler={setAttributeInCartHandler}
-          productId={productId}
+          productId={inCartId}
         />
       </div>
     );

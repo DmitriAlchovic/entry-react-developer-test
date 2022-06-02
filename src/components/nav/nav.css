@@ -3,5 +3,9 @@
     justify-content: space-between;
     list-style-type: none;
     min-height: 80px;
-    z-index: 50;
+    background-color: #ffff;
+    z-index: 5;
   }
+  
+  
+  

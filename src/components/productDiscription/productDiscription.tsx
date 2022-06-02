@@ -1,19 +1,16 @@
-import { Component } from "react";
-import "./productDiscription.css";
-import { ProductDiscriptionProps } from "../../interfaces";
-import Gallery from "./gallery";
-import { ProductDiscriptionState } from "../../interfaces";
-import { Attrs } from "../../interfaces";
-import ProductAttributes from "../cartCard/cartCardInfo/productAttributes/productAttributes";
-import AddToCartBtn from "./addToCartBtn";
-import BrandPropductName from "./brandProductName";
-import ProductPrice from "./productPrice";
-import Description from "./description";
+import React, { Component } from 'react';
+import './productDiscription.css';
+import { ProductDiscriptionProps } from '../../interfaces';
+import Gallery from './gallery';
+import { ProductDiscriptionState } from '../../interfaces';
+import { Attrs } from '../../interfaces';
+import ProductAttributes from '../cartCard/cartCardInfo/productAttributes/productAttributes';
+import AddToCartBtn from './addToCartBtn';
+import BrandPropductName from './brandProductName';
+import ProductPrice from './productPrice';
+import Description from './description';
 
-export default class ProductDiscription extends Component<
-  ProductDiscriptionProps,
-  ProductDiscriptionState
-> {
+export default class ProductDiscription extends Component<ProductDiscriptionProps, ProductDiscriptionState> {
   state = {
     attributes: [],
   };
@@ -24,7 +21,7 @@ export default class ProductDiscription extends Component<
       const displayValue = items[0].displayValue;
       return { id, displayValue };
     });
-
+    
     this.setAttributesArr(attrsToSet);
   }
 
@@ -33,9 +30,8 @@ export default class ProductDiscription extends Component<
       const attributes = this.toggleProperty(
         state.attributes,
         event.target.name,
-        "displayValue",
-        event.target.value
-      );
+        'displayValue',
+        event.target.value);
       return { attributes };
     });
   };
@@ -44,7 +40,7 @@ export default class ProductDiscription extends Component<
     arr: any[],
     id: string,
     propName: string,
-    value: string
+    value: string,
   ) => {
     const idx = arr.findIndex((attribute) => attribute.id === id);
     const newValue = value;
@@ -53,14 +49,14 @@ export default class ProductDiscription extends Component<
   };
 
   setAttributesArr = (attrsToSet: Attrs[]) => {
-    this.setState((state) => {
+    this.setState(() => {
       const attributes = attrsToSet;
       return { attributes: attributes };
     });
   };
 
   render() {
-    const { product, currentCurrency, addToCartHandler, cartArray } =
+    const { product, currentCurrency, addToCartHandler } =
       this.props;
     const {
       gallery,
@@ -73,29 +69,39 @@ export default class ProductDiscription extends Component<
       inStock,
     } = product;
     const price = prices.filter(
-      ({ currency }) => currency.symbol === currentCurrency
-    );
+      ({ currency }) => currency.symbol === currentCurrency);
 
-    const inCart = cartArray.find((item) => item.id === id);
     const activeAttributes = this.state.attributes.length;
 
     return (
       <div className="productDisplayContainer">
-        <Gallery gallery={gallery}></Gallery>
+        <Gallery gallery={gallery} inStock={inStock}></Gallery>
         <div className="info">
-         <BrandPropductName productName={name} brand={brand} /> 
-          {activeAttributes? <ProductAttributes
-        attributes={attributes}
-        activeAttributes={this.state.attributes}
-        isDropdown={false}
-        setAttributeInCartHandler={this.setAttributeHandler}
-        productId={id}
-      />:null}
-          <ProductPrice price={price[0].amount} currentCurrency={currentCurrency} /> 
+          <BrandPropductName productName={name} brand={brand} />
+          {activeAttributes ? (
+            <ProductAttributes
+              attributes={attributes}
+              activeAttributes={this.state.attributes}
+              isDropdown={false}
+              setAttributeInCartHandler={this.setAttributeHandler}
+              productId={id}
+            />
+          ) : null}
+          <ProductPrice
+            price={price[0].amount}
+            currentCurrency={currentCurrency}
+          />
           <div className="addToCartContainer">
-            {!inCart && inStock && <AddToCartBtn addToCartHandler={addToCartHandler} prices={prices} productId={id} attributes={this.state.attributes}  />}
+            {inStock && (
+              <AddToCartBtn
+                addToCartHandler={addToCartHandler}
+                prices={prices}
+                productId={id}
+                attributes={this.state.attributes}
+              />
+            )}
           </div>
-         <Description description={description} /> 
+          <Description description={description} />
         </div>
       </div>
     );

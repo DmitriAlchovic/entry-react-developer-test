@@ -1,3 +1,3 @@
-import ProductNamePrice from "./ProductNamePriceInfo";
+import ProductNamePrice from './ProductNamePriceInfo';
 
 export default ProductNamePrice;

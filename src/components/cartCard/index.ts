@@ -1,3 +1,3 @@
-import CartCard from "./cartCard";
+import CartCard from './cartCard';
 
 export default CartCard;

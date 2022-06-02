@@ -1,15 +1,15 @@
-import { Component } from "react";
-import { Query } from "@apollo/client/react/components";
-import { GET_PRODUCT } from "../../query/product";
-import ProductDiscription from "./productDiscription";
-import { ProductDiscriptionQueryProps } from "../../interfaces";
+import React, { Component } from 'react';
+import { Query } from '@apollo/client/react/components';
+import { GET_PRODUCT } from '../../query/product';
+import ProductDiscription from './productDiscription';
+import { ProductDiscriptionQueryProps } from '../../interfaces';
 
 export default class ProductDiscriptionQuery extends Component<ProductDiscriptionQueryProps> {
   render() {
     const { productId, cartArray, addToCartHandler, currentCurrency } =
       this.props;
     return (
-      <Query query={GET_PRODUCT} variables={{ id:productId }}>
+      <Query query={GET_PRODUCT} variables={{ id: productId }}>
         {(queryResult: any) => {
           const { data, loading, error } = queryResult;
           if (loading) {

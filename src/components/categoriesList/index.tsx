@@ -1,3 +1,3 @@
-import CategoriesList from "./categoriesListQuery";
+import CategoriesList from './categoriesListQuery';
 
 export default CategoriesList;

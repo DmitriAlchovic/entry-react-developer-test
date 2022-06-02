@@ -1,19 +1,28 @@
-import { Component } from "react";
-import { MainPageProps } from "../interfaces";
-import "./MainPage.css";
-import CategoryCardQuery from "../components/categoryCard/categoryCardQuery";
+import React, { Component } from 'react';
+import { MainPageProps } from '../interfaces';
+import './MainPage.css';
+import CategoryCardQuery from '../components/categoryCard/categoryCardQuery';
+import { useParams } from 'react-router-dom';
 
-export default class MainPage extends Component<MainPageProps> {
+class MainPage extends Component<MainPageProps> {
+
+  componentDidMount() {
+    const { category } = this.props.params; 
+    if (category) {
+      this.props.changeCategory(category);
+    }
+  }
+
   render() {
-    const { category, currentCurrency, cartArray, addToCartHandler } =
+    const { currentCategory, currentCurrency, cartArray, addToCartHandler } =
       this.props;
     return (
       <div>
         <p className="categoryName">
-          {category.charAt(0).toUpperCase() + category.slice(1)}
+          {currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)}
         </p>
         <CategoryCardQuery
-          category={category}
+          currentCategory={currentCategory}
           currentCurrency={currentCurrency}
           cartArray={cartArray}
           addToCartHandler={addToCartHandler}
@@ -21,4 +30,8 @@ export default class MainPage extends Component<MainPageProps> {
       </div>
     );
   }
+}
+
+export default function addParams(props: any) {
+  return <MainPage {...props} params={useParams()} />;
 }

@@ -1,16 +1,14 @@
-import { Component } from "react";
-import { Query } from "@apollo/client/react/components";
-import { GET_ALL_CATEGORIES } from "../../query/categories";
-import CategoriesList from "./categoriesList";
+import React, { Component } from 'react';
+import { Query } from '@apollo/client/react/components';
+import { GET_ALL_CATEGORIES } from '../../query/categories';
+import CategoriesList from './categoriesList';
+import { CategoriesListQueryProps } from '../../interfaces';
 
-export interface categoriesListQueryProps {
-  category: string;
-  changeCategory: Function;
-}
 
-export default class CategotyQuery extends Component<categoriesListQueryProps> {
+
+export default class CategotyQuery extends Component<CategoriesListQueryProps> {
   render() {
-    const { category, changeCategory } = this.props;
+    const { currentCategory, changeCategory } = this.props;
     return (
       <Query query={GET_ALL_CATEGORIES}>
         {(queryResult: any) => {
@@ -22,11 +20,14 @@ export default class CategotyQuery extends Component<categoriesListQueryProps> {
             const { categories } = data;
             return (
               <CategoriesList
-                category={category}
+                currentCategory={currentCategory}
                 categories={categories}
                 changeCategory={changeCategory}
               ></CategoriesList>
             );
+          }
+          if (error) {
+            return (<div>Error</div>);
           }
           return null;
         }}

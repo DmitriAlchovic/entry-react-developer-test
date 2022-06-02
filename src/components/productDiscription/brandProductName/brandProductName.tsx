@@ -1,8 +1,6 @@
-import { Component } from "react";
-import { BrandPropductNameProps } from "../../../interfaces";
-import "./brandProductName.css";
-
-
+import React, { Component } from 'react';
+import { BrandPropductNameProps } from '../../../interfaces';
+import './brandProductName.css';
 
 export default class BrandPropductName extends Component<BrandPropductNameProps> {
   render() {

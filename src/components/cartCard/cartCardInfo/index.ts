@@ -1,3 +1,3 @@
-import CartCardInfo from "./cartCardInfo";
+import CartCardInfo from './cartCardInfo';
 
 export default CartCardInfo;

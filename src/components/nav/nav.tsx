@@ -1,34 +1,34 @@
-import { Component } from "react";
-import "./nav.css";
-import { NavProps } from "../../interfaces";
-import CategoriesListQuery from "../categoriesList/";
-import CurrencySwitcher from "./currencySwitcher";
-import Dropdown from "./dropdown";
-import VectorDown from "../../assets/Vector-down.svg";
-import VectorUp from "../../assets/Vector-up.svg";
-import EmptyCart from "../../assets/Empty Cart.svg";
-import Logo from "./logo/logo";
-import Minicart from "./minicart";
+import React, { Component } from 'react';
+import './nav.css';
+import { NavProps } from '../../interfaces';
+import CategoriesListQuery from '../categoriesList/';
+import CurrencySwitcher from './currencySwitcher';
+import Dropdown from './dropdown';
+import VectorDown from '../../assets/Vector-down.svg';
+import VectorUp from '../../assets/Vector-up.svg';
+import EmptyCart from '../../assets/Empty Cart.svg';
+import Logo from './logo/logo';
+import Minicart from './minicart';
 
 export default class Nav extends Component<NavProps> {
   render() {
     const {
-      category,
+      currentCategory,
       currentCurrency,
       changeCurrency,
       changeProductQuantity,
       setAttributeInCartHandler,
       cartArray,
       changeCategory,
+      hasOverlay,
+      toggleOverlay,
     } = this.props;
     const productQuantity = cartArray.reduce(
-      (prev, item) => prev + item.productQuantity,
-      0
-    );
+      (prev, item) => prev + item.productQuantity, 0);
     return (
       <div className="navBar">
         <CategoriesListQuery
-          category={category}
+          currentCategory={currentCategory}
           changeCategory={changeCategory}
         />
         <Logo />
@@ -39,13 +39,14 @@ export default class Nav extends Component<NavProps> {
               changeCurrency={changeCurrency}
             />
           </Dropdown>
-          <Dropdown icon={EmptyCart} icon3={productQuantity}>
+          <Dropdown icon={EmptyCart} icon3={productQuantity} hasOverlay={hasOverlay} toggleOverlay={toggleOverlay}>
             <Minicart
               productQuantity={productQuantity}
               changeProductQuantity={changeProductQuantity}
               setAttributeInCartHandler={setAttributeInCartHandler}
               currentCurrency={currentCurrency}
               cart={cartArray}
+              toggleOverlay={toggleOverlay}
             />
           </Dropdown>
         </div>

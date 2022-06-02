@@ -1,7 +1,7 @@
-import { Component } from "react";
-import { ProductNamePriceProps } from "../../../../interfaces";
-import dropStyle from "./productNamePriceDrop.module.css";
-import defaultStyle from "./productNamePrice.module.css";
+import React, { Component } from 'react';
+import { ProductNamePriceProps } from '../../../../interfaces';
+import dropStyle from './productNamePriceDrop.module.css';
+import defaultStyle from './productNamePrice.module.css';
 
 export default class ProductNamePrice extends Component<ProductNamePriceProps> {
   render() {

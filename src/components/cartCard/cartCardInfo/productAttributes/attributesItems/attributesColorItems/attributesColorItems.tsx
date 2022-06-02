@@ -1,7 +1,7 @@
-import { Component } from "react";
-import { AttributesItemProps } from "../../../../../../interfaces";
-import dropStyle from "./attributesColorItemsDrop.module.css";
-import defaultStyle from "./attributesColorItems.module.css";
+import React, { Component } from 'react';
+import { AttributesItemProps } from '../../../../../../interfaces';
+import dropStyle from './attributesColorItemsDrop.module.css';
+import defaultStyle from './attributesColorItems.module.css';
 
 export default class AttributesColorItem extends Component<AttributesItemProps> {
   render() {
@@ -12,7 +12,7 @@ export default class AttributesColorItem extends Component<AttributesItemProps> 
       name,
       productId,
       isDropdown,
-      activeAttributes
+      activeAttributes,
     } = this.props;
     const styles = isDropdown ? dropStyle : defaultStyle;
 

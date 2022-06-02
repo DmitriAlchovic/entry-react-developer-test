@@ -1,3 +1,3 @@
-import Minicart from "./minicart";
+import Minicart from './minicart';
 
 export default Minicart;

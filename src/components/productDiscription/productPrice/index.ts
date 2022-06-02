@@ -1,3 +1,3 @@
-import ProductPrice from "./productPrice";
+import ProductPrice from './productPrice';
 
 export default ProductPrice;

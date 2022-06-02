@@ -1,7 +1,7 @@
-import { Component } from "react";
-import { AttributesItemProps } from "../../../../../../interfaces";
-import dropStyle from "./attributesItemsDrop.module.css";
-import defaultStyle from "./attributesItems.module.css";
+import React, { Component } from 'react';
+import { AttributesItemProps } from '../../../../../../interfaces';
+import dropStyle from './attributesItemsDrop.module.css';
+import defaultStyle from './attributesItems.module.css';
 
 export default class AttributesItems extends Component<AttributesItemProps> {
   render() {
@@ -12,10 +12,10 @@ export default class AttributesItems extends Component<AttributesItemProps> {
       name,
       productId,
       activeAttributes,
-      isDropdown
+      isDropdown,
     } = this.props;
-    
-    const styles = isDropdown?dropStyle:defaultStyle; 
+
+    const styles = isDropdown ? dropStyle : defaultStyle;
 
     const itemsArr = items.map(({ displayValue, id, value }) => {
       return (
@@ -26,7 +26,7 @@ export default class AttributesItems extends Component<AttributesItemProps> {
           name={name}
           value={displayValue}
           className={
-           activeAttributes[attrIdx].displayValue === displayValue
+            activeAttributes[attrIdx].displayValue === displayValue
               ? styles.selectedBtn
               : styles.attributeBtn
           }

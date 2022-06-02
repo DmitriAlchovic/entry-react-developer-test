@@ -1,3 +1,3 @@
-import CategoryCardInfo from "./categoryCardInfo";
+import CategoryCardInfo from './categoryCardInfo';
 
 export default CategoryCardInfo;

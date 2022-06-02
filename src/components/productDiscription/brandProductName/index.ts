@@ -1,3 +1,3 @@
-import BrandPropductName from "./brandProductName";
+import BrandPropductName from './brandProductName';
 
 export default BrandPropductName;

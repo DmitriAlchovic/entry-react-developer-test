@@ -1,5 +1,5 @@
-import { Component } from "react";
-import "./cartPageFooter.css";
+import React, { Component } from 'react';
+import './cartPageFooter.css';
 
 export interface CartPageFooterProps {
   taxSum: number;

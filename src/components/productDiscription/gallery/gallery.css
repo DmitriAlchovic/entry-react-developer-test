@@ -27,7 +27,6 @@
   width: 100%;
   object-fit: contain;
   margin-top: 16px;
-  max-height: 88px;
   margin-bottom: 16px;
 }
 
@@ -37,6 +36,28 @@
 }
 
 .activeImgContainer {
+  display: flex;
   align-items: center;
+  max-height: 560px;
   justify-content: center;
+  width: 600px;
+}
+
+.inStock {
+    position: absolute;
+    align-self: center;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #8D8F9A;
+}
+
+.activeImgOut {
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    opacity: 0.5;
 }

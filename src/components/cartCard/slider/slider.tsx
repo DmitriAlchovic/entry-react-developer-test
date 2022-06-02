@@ -1,8 +1,8 @@
-import  { Component } from "react";
-import { SliderProps, SliderState } from "../../../interfaces";
-import "./slider.css";
-import vectorLeft from "../../../assets/Vector-left.svg"; 
-import vectorRight from "../../../assets/Vector-right.svg";
+import React, { Component } from 'react';
+import { SliderProps, SliderState } from '../../../interfaces';
+import './slider.css';
+import vectorLeft from '../../../assets/Vector-left.svg';
+import vectorRight from '../../../assets/Vector-right.svg';
 
 export default class Slider extends Component<SliderProps, SliderState> {
   state = {
@@ -27,22 +27,27 @@ export default class Slider extends Component<SliderProps, SliderState> {
 
   render() {
     const { gallery } = this.props;
+    const { galleryIndex } = this.state;
     const galleryArr = gallery.map((item, index) => {
-      return <img key={index} className="sliderImg" src={item}></img>;
+      return <img key={index} className={galleryIndex === index ? 'sliderImg' : 'sliderImgHidden'} src={item}></img>;
     });
     return (
       <div className="sliderContainer">
         <div className="sliderItem">
-          <div className="arrows">
-            <button className="arrow" onClick={this.leftArrowClick}>
-              <img src={vectorLeft} />
-            </button>
-            <button className="arrow" onClick={this.rightArrowClick}>
-              <img src={vectorRight} />
-            </button>
-          </div>
+          {gallery.length > 1 ? (
+            <div className="arrows">
+              <button className="arrow" onClick={this.leftArrowClick}>
+                <img src={vectorLeft} />
+              </button>
+              <button className="arrow" onClick={this.rightArrowClick}>
+                <img src={vectorRight} />
+              </button>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
-        <div className="imgC">{galleryArr[this.state.galleryIndex]}</div>
+        <div className="imgC">{galleryArr}</div>
       </div>
     );
   }

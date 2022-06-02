@@ -1,3 +1,3 @@
-import CurrencySwitcher from "./currencyListQuery";
+import CurrencySwitcher from './currencyListQuery';
 
 export default CurrencySwitcher;

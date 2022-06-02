@@ -1,3 +1,3 @@
-import QuantityChanger from "./quantityChanger";
+import QuantityChanger from './quantityChanger';
 
 export default QuantityChanger;

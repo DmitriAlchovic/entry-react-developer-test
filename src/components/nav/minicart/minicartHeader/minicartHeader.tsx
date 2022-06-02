@@ -1,7 +1,6 @@
-import { Component } from "react";
-import { CartHeaderProps } from "../../../../interfaces";
-import "./minicartHeader.css";
-
+import React, { Component } from 'react';
+import { CartHeaderProps } from '../../../../interfaces';
+import './minicartHeader.css';
 
 export default class MinicartHeader extends Component<CartHeaderProps> {
   render() {
@@ -11,7 +10,7 @@ export default class MinicartHeader extends Component<CartHeaderProps> {
         <p className="myBag">
           My Bag,
           <span className="cartItems">
-            {productQuantity} {productQuantity > 1 ? "items" : "item"}
+            {productQuantity} {productQuantity > 1 ? 'items' : 'item'}
           </span>
         </p>
       </div>

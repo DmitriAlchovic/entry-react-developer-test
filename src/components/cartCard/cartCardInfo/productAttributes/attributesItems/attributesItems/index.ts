@@ -1,3 +1,3 @@
-import AttributesItems from "./attributesItems";
+import AttributesItems from './attributesItems';
 
 export default AttributesItems;

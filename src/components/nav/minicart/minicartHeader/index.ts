@@ -1,3 +1,3 @@
-import minicartHeader from "./minicartHeader";
+import minicartHeader from './minicartHeader';
 
 export default minicartHeader;

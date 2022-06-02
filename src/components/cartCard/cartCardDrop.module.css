@@ -6,9 +6,11 @@
 
 .sliderContainer {
   position: relative;
-  min-height: 190px;
-  max-width: 200px;
+  height: 190px;
+  width: 121px;
   margin: 6%;
+  align-self: center;
+  justify-self: center;
 }
 
 .cartRight {
