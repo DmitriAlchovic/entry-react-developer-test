@@ -26,7 +26,7 @@ export default class App extends Component<{}, AppState> {
 
   state = {
     currentCurrency: '$',
-    currentCategory: 'all',
+    currentCategory: '',
     cartArray: [],
     hasOverlay: false,
   };

@@ -8,30 +8,35 @@ export default class CategoryCardQuery extends Component<CategoryCardQueryProps>
   render() {
     const { currentCategory, addToCartHandler, currentCurrency, cartArray } =
       this.props;
-    return (
-      <Query query={GET_PRODUCT_INFO} variables={{ category:currentCategory }}>
-        {(queryResult: any) => {
-          const { data, loading, error } = queryResult;
-          if (loading) {
-            return <div>...Loading</div>;
-          }
-          if (data) {
-            const { category } = data;
-            return (
-              <CategoryCard
-                addToCartHandler={addToCartHandler}
-                cartArray={cartArray}
-                category={category}
-                currentCurrency={currentCurrency}
-              ></CategoryCard>
-            );
-          }
-          if (error) {
-            return <div>Error</div>;
-          }
-          return null;
-        }}
-      </Query>
-    );
+    if (currentCategory) {
+      return (
+        <Query
+          query={GET_PRODUCT_INFO}
+          variables={{ category: currentCategory }}
+        >
+          {(queryResult: any) => {
+            const { data, loading, error } = queryResult;
+            if (loading) {
+              return <div>...Loading</div>;
+            }
+            if (data) {
+              const { category } = data;
+              return (
+                <CategoryCard
+                  addToCartHandler={addToCartHandler}
+                  cartArray={cartArray}
+                  category={category}
+                  currentCurrency={currentCurrency}
+                ></CategoryCard>
+              );
+            }
+            if (error) {
+              return <div>Error</div>;
+            }
+            return null;
+          }}
+        </Query>
+      );
+    }
   }
 }
